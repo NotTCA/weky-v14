@@ -103,39 +103,39 @@ module.exports = {
       });
   },
   checkForUpdates: async function () {
-    const package = require("../../../package.json");
+    const package = require("../../../../package.json");
     const vLatest = require("../package.json").version;
-    if (package.dependencies.weky) {
-      if (vLatest !== package.dependencies.weky.slice(1)) {
+    if (package.dependencies["@nottca/weky"]) {
+      if (vLatest !== package.dependencies["@nottca/weky"].slice(1)) {
         const msg = chalk(
           `new ${chalk.green("version")} of ${chalk.yellow(
-            "weky"
+            "@nottca/weky"
           )} is available! ${chalk.red(
             package.dependencies.weky.slice(1)
           )} -> ${chalk.green(vLatest)}`
         );
         const tip = chalk(
-          `registry ${chalk.cyan("https://www.npmjs.com/package/weky")}`
+          `registry ${chalk.cyan("https://www.npmjs.com/package/@nottca/weky")}`
         );
         const install = chalk(
-          `run ${chalk.green("npm i weky@latest")} to update`
+          `run ${chalk.green("npm i @nottca/weky@latest")} to update`
         );
         boxConsole([msg, tip, install]);
       }
-    } else if (package.devDependencies.weky) {
-      if (vLatest !== package.devDependencies.weky.slice(1)) {
+    } else if (package.devDependencies["@nottca/weky"]) {
+      if (vLatest !== package.devDependencies["@nottca/weky"].slice(1)) {
         const msg = chalk(
           `new ${chalk.green("version")} of ${chalk.yellow(
             "weky"
           )} is available! ${chalk.red(
-            package.devDependencies.weky.slice(1)
+            package.devDependencies["@nottca/weky"].slice(1)
           )} -> ${chalk.green(vLatest)}`
         );
         const tip = chalk(
-          `registry ${chalk.cyan("https://www.npmjs.com/package/weky")}`
+          `registry ${chalk.cyan("https://www.npmjs.com/package/@nottca/weky")}`
         );
         const install = chalk(
-          `run ${chalk.green("npm i weky@latest")} to update`
+          `run ${chalk.green("npm i @nottca/weky@latest")} to update`
         );
         boxConsole([msg, tip, install]);
       }
