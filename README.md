@@ -10,113 +10,161 @@
 </p>
 
 ## What is weky?
+
 - A fun npm package to play games within Discord with buttons!
-- looking for examples? click here: [Examples](https://github.com/WekyDev/weky-npm/tree/main/Examples)
+- looking for examples? click here: [Examples](https://github.com/NotTCA/weky-v14/tree/main/Examples)
 
 ## Features
+
 - 🧑 Beginner friendly
 - 🎉 Easy to use
 - ✨ Simple
 - 🔘 Discord Buttons
-- 🤖 Supports Discord.js V13 and V12
+- 🤖 Supports Discord.js v12, v13, and v14!
 - and much more!
 
 ## Install the package 📥
+
 ```sh
-npm install weky
+npm install @nottca/weky
 ```
 
 ## Usage 📚
+
 ```js
-const { Calculator } = require("weky");
+const { Calculator } = require("@nottca/weky");
 await Calculator({
-    message: message,
-    embed: {
-        title: 'Calculator | Weky Development',
-        color: '#5865F2',
-        footer: '©️ Weky Development',
-        timestamp: true
-    },
-    disabledQuery: 'Calculator is disabled!',
-    invalidQuery: 'The provided equation is invalid!',
-    othersMessage: 'Only <@{{author}}> can use the buttons!'
+  message: message,
+  embed: {
+    title: "Calculator | Weky Development",
+    color: "#5865F2",
+    footer: "©️ Weky Development",
+    timestamp: true,
+  },
+  disabledQuery: "Calculator is disabled!",
+  invalidQuery: "The provided equation is invalid!",
+  othersMessage: "Only <@{{author}}> can use the buttons!",
 });
 ```
 
 ## Example ✏️
-#### Discord.js v12.5.3
+
+#### Discord.js v12
+
 ```js
-const Discord = require('discord.js');
-require('@weky/inlinereply');
+const Discord = require("discord.js");
+require("@weky/inlinereply");
 const client = new Discord.Client();
-const disbut = require('discord-buttons');
-const { Calculator } = require('weky');
+const disbut = require("discord-buttons");
+const { Calculator } = require("@nottca/weky");
 disbut(client);
 
-client.on('ready', async () => {
-	console.log(`Logged in as ${client.user.tag}`);
+client.on("ready", async () => {
+  console.log(`Logged in as ${client.user.tag}`);
 });
 
-client.on('message', async (message) => {
-	if(message.content === '!calculator') {
-		await Calculator({
-			message: message,
-			embed: {
-				title: 'Calculator | Weky Development',
-				color: '#5865F2',
-				footer: '©️ Weky Development',
-				timestamp: true,
-			},
-			disabledQuery: 'Calculator is disabled!',
-			invalidQuery: 'The provided equation is invalid!',
-			othersMessage: 'Only <@{{author}}> can use the buttons!',
-		});
-	}
+client.on("message", async (message) => {
+  if (message.content === "!calculator") {
+    await Calculator({
+      message: message,
+      embed: {
+        title: "Calculator | Weky Development",
+        color: "#5865F2",
+        footer: "©️ Weky Development",
+        timestamp: true,
+      },
+      disabledQuery: "Calculator is disabled!",
+      invalidQuery: "The provided equation is invalid!",
+      othersMessage: "Only <@{{author}}> can use the buttons!",
+    });
+  }
 });
 
-client.login('DISCORD_BOT_TOKEN');
+client.login("DISCORD_BOT_TOKEN");
 ```
 
-#### Discord.js v13.1.0
+#### Discord.js v13
+
 ```js
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const { Calculator } = require('weky');
+const Discord = require("discord.js");
+const client = new Discord.Client({
+  intents: ["GUILDS", "GUILD_MESSAGES"],
+});
+const { Calculator } = require("@nottca/weky");
 
-client.on('ready', async () => {
-	console.log(`Logged in as ${client.user.tag}`);
+client.on("ready", async () => {
+  console.log(`Logged in as ${client.user.tag}`);
 });
 
-client.on('messageCreate', async (message) => {
-	if (message.content === '!calculator') {
-		await Calculator({
-			message: message,
-			embed: {
-				title: 'Calculator | Weky Development',
-				color: '#5865F2',
-				footer: '©️ Weky Development',
-				timestamp: true,
-			},
-			disabledQuery: 'Calculator is disabled!',
-			invalidQuery: 'The provided equation is invalid!',
-			othersMessage: 'Only <@{{author}}> can use the buttons!',
-		});
-	}
+client.on("messageCreate", async (message) => {
+  if (message.content === "!calculator") {
+    await Calculator({
+      message: message,
+      embed: {
+        title: "Calculator | Weky Development",
+        color: "#5865F2",
+        footer: "©️ Weky Development",
+        timestamp: true,
+      },
+      disabledQuery: "Calculator is disabled!",
+      invalidQuery: "The provided equation is invalid!",
+      othersMessage: "Only <@{{author}}> can use the buttons!",
+    });
+  }
 });
 
-client.login('DISCORD_BOT_TOKEN');
+client.login("DISCORD_BOT_TOKEN");
 ```
+
+#### Discord.js v14
+
+```js
+const Discord = require("discord.js");
+const client = new Discord.Client({
+  intents: ["Guilds", "GuildMessages", "MessageContent"],
+});
+const { Calculator } = require("@nottca/weky");
+
+client.on("ready", async () => {
+  console.log(`Logged in as ${client.user.tag}`);
+});
+
+client.on("messageCreate", async (message) => {
+  if (message.content === "!calculator") {
+    await Calculator({
+      message: message,
+      embed: {
+        title: "Calculator | Weky Development",
+        color: "#5865F2",
+        footer: "©️ Weky Development",
+        timestamp: true,
+      },
+      disabledQuery: "Calculator is disabled!",
+      invalidQuery: "The provided equation is invalid!",
+      othersMessage: "Only <@{{author}}> can use the buttons!",
+    });
+  }
+});
+
+client.login("DISCORD_BOT_TOKEN");
+```
+
 ## Result 📤
+
 <img src="https://i.imgur.com/DEdhHHd.png">
 
 ## Contributing 🤝
+
 - Contributions, issues and feature requests are welcome!
-- Feel free to check **[issues page](https://github.com/WekyDev/weky-npm/issues)**.
+- Feel free to check **[issues page](https://github.com/NotTCA/weky-v14/issues)**.
 
 ## Developers 👨‍💻
+
 - **[Face#5454](https://github.com/face-hh)**
 - **[Sujal Goel#7602](https://github.com/sujalgoel)**
 - **[rayz#4986](https://github.com/rayzdev)**
+- **[TCA#7797](https://github.com/NotTCA)**
 
 ## Support ❔
+
 <a href="https://discord.gg/ANzBrkcXZy"><img src="https://invidget.switchblade.xyz/ANzBrkcXZy" /></a>
