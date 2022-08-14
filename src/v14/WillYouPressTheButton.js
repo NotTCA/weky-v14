@@ -172,7 +172,9 @@ module.exports = async (options) => {
 				)}`,
 		)
 		.setColor(options.embed.color)
-		.setFooter(options.embed.footer);
+		.setFooter({
+      text: options.embed.footer,
+    });
 	if (options.embed.timestamp) {
 		embed.setTimestamp();
 	}
