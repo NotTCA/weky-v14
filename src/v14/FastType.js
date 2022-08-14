@@ -133,7 +133,9 @@ module.exports = async (options) => {
       name: "Sentence:",
       value: `${sentence}`,
     })
-    .setFooter(options.embed.footer)
+    .setFooter({
+      text: options.embed.footer,
+    })
     .setColor(options.embed.color);
   if (options.embed.timestamp) {
     embed.setTimestamp();
@@ -159,7 +161,9 @@ module.exports = async (options) => {
             .replace("{{time}}", functions.convertTime(time))
             .replace("{{wpm}}", wpm.toFixed(2))
         )
-        .setFooter(options.embed.footer)
+        .setFooter({
+          text: options.embed.footer,
+        })
         .setColor(options.embed.color);
       if (options.embed.timestamp) {
         _embed.setTimestamp();
@@ -179,7 +183,9 @@ module.exports = async (options) => {
     } else {
       const _embed = new Discord.EmbedBuilder()
         .setDescription(`${options.loseMessage}`)
-        .setFooter(options.embed.footer)
+        .setFooter({
+          text: options.embed.footer,
+        })
         .setColor(options.embed.color);
       if (options.embed.timestamp) {
         _embed.setTimestamp();
@@ -203,7 +209,9 @@ module.exports = async (options) => {
     if (reason === "time") {
       const _embed = new Discord.EmbedBuilder()
         .setDescription(`${options.loseMessage}`)
-        .setFooter(options.embed.footer)
+        .setFooter({
+          text: options.embed.footer,
+        })
         .setColor(options.embed.color);
       if (options.embed.timestamp) {
         _embed.setTimestamp();

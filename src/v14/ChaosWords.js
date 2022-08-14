@@ -194,6 +194,9 @@ module.exports = async (options) => {
         value: `0/${options.words.length}`,
       }
     )
+    .setFooter({
+      text: options.embed.footer,
+    })
     .setFooter(options.embed.footer)
     .setColor(options.embed.color);
   if (options.embed.timestamp) {
@@ -247,7 +250,9 @@ module.exports = async (options) => {
             value: `0/${options.words.length}`,
           }
         )
-        .setFooter(options.embed.footer)
+        .setFooter({
+          text: options.embed.footer,
+        })
         .setColor(options.embed.color);
       if (options.embed.timestamp) {
         _embed.setTimestamp();
@@ -291,7 +296,9 @@ module.exports = async (options) => {
               value: `${options.words.join(", ")}`,
             }
           )
-          .setFooter(options.embed.footer)
+          .setFooter({
+            text: options.embed.footer,
+          })
           .setColor(options.embed.color);
         if (options.embed.timestamp) {
           __embed.setTimestamp();
@@ -309,7 +316,9 @@ module.exports = async (options) => {
             .replace("{{remaining}}", options.words.length - remaining)}`
         )
         .setColor(options.embed.color)
-        .setFooter(options.embed.footer);
+        .setFooter({
+          text: options.embed.footer,
+        });
       if (options.embed.timestamp) {
         __embed.setTimestamp();
       }
@@ -324,7 +333,9 @@ module.exports = async (options) => {
           .setDescription(options.loseMessage)
           .addField(options.embed.field1, arr)
           .addField(options.embed.field4, `${options.words.join(", ")}`)
-          .setFooter(options.embed.footer)
+          .setFooter({
+            text: options.embed.footer,
+          })
           .setColor(options.embed.color);
         if (options.embed.timestamp) {
           _embed.setTimestamp();
@@ -357,7 +368,9 @@ module.exports = async (options) => {
           )}`
         )
         .setColor(options.embed.color)
-        .setFooter(options.embed.footer);
+        .setFooter({
+          text: options.embed.footer,
+        });
       if (options.embed.timestamp) {
         _embed.setTimestamp();
       }
@@ -382,7 +395,9 @@ module.exports = async (options) => {
             value: `${options.words.join(", ")}`,
           }
         )
-        .setFooter(options.embed.footer)
+        .setFooter({
+          text: options.embed.footer,
+        })
         .setColor(options.embed.color);
       if (options.embed.timestamp) {
         _embed.setTimestamp();
@@ -452,7 +467,9 @@ module.exports = async (options) => {
           value: `${options.words.join(", ")}`,
         }
       )
-      .setFooter(options.embed.footer)
+      .setFooter({
+        text: options.embed.footer,
+      })
       .setColor(options.embed.color);
     if (options.embed.timestamp) {
       _embed.setTimestamp();

@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 const fetch = require("node-fetch");
 const words = require("../data/words.json");
 const { boxConsole } = require("./boxConsole");
-const { MessageActionRow, MessageButton } = require("discord.js");
+const Discord = require("discord.js");
 
 module.exports = {
   fetchhtml: async function (url) {
@@ -142,18 +142,23 @@ module.exports = {
     }
   },
   addRow: function (btns) {
-    const row = new ActionRowBuilder();
+    let row;
+    if (Discord.version === "13.10.2") {
+      row = new Discord.MessageActionRow();
+    } else {
+      row = new Discord.ActionRowBuilder();
+    }
     for (const btn of btns) {
       row.addComponents(btn);
     }
     return row;
   },
   createButton: function (label, disabled, getRandomString) {
-    let style = "Secondary";
+    let style = "SECONDARY";
     if (label === "AC" || label === "DC" || label === "⌫") {
-      style = "Danger";
+      style = "DANGER";
     } else if (label === "=") {
-      style = "Success";
+      style = "SUCCESS";
     } else if (
       label === "(" ||
       label === ")" ||
@@ -165,13 +170,21 @@ module.exports = {
       label === "+" ||
       label === "."
     ) {
-      style = "Primary";
+      style = "PRIMARY";
     }
     if (disabled) {
-      const btn = new ButtonBuilder()
-        .setLabel(label)
-        .setStyle(style)
-        .setDisabled();
+      let btn;
+      if (Discord.version === "13.10.2") {
+        btn = new Discord.MessageButton()
+          .setLabel(label)
+          .setStyle(style)
+          .setDisabled();
+      } else {
+        btn = new Discord.ButtonBuilder()
+          .setLabel(label)
+          .setStyle(`${style[0].toUpperCase() + style.toLowerCase().slice(1)}`)
+          .setDisabled();
+      }
       if (label === "\u200b") {
         btn.setCustomId(getRandomString(10));
       } else {
@@ -179,7 +192,14 @@ module.exports = {
       }
       return btn;
     } else {
-      const btn = new ButtonBuilder().setLabel(label).setStyle(style);
+      let btn;
+      if (Discord.version === "13.10.2") {
+        btn = new Discord.MessageButton().setLabel(label).setStyle(style);
+      } else {
+        btn = new Discord.ButtonBuilder()
+          .setLabel(label)
+          .setStyle(`${style[0].toUpperCase() + style.toLowerCase().slice(1)}`);
+      }
       if (label === "\u200b") {
         btn.setDisabled();
         btn.setCustomId(getRandomString(10));

@@ -115,7 +115,9 @@ module.exports = async (options) => {
     .setTitle(options.embed.title)
     .setDescription(stringify)
     .setColor(options.embed.color)
-    .setFooter(options.embed.footer);
+    .setFooter({
+      text: options.embed.footer,
+    });
   if (options.embed.timestamp) {
     embed.setTimestamp();
   }
@@ -131,7 +133,9 @@ module.exports = async (options) => {
           .setTitle(options.embed.title)
           .setDescription(stringify)
           .setColor(options.embed.color)
-          .setFooter(options.embed.footer);
+          .setFooter({
+            text: options.embed.footer,
+          });
         if (options.embed.timestamp) {
           _embed.setTimestamp();
         }
@@ -146,7 +150,9 @@ module.exports = async (options) => {
           .setTitle(options.embed.title)
           .setColor(options.embed.color)
           .setDescription(stringify)
-          .setFooter(options.embed.footer);
+          .setFooter({
+            text: options.embed.footer,
+          });
         if (options.embed.timestamp) {
           _embed.setTimestamp();
         }
