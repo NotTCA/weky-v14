@@ -183,7 +183,7 @@ module.exports = async (options) => {
       embed.setTimestamp();
     }
     let btn1 = new Discord.ButtonBuilder()
-      .setStyle("DANGER")
+      .setStyle("Danger")
       .setLabel(options.buttonText)
       .setCustomId(id);
     const msg = await options.message.reply({
@@ -235,7 +235,7 @@ module.exports = async (options) => {
           _embed.setTimestamp();
         }
         btn1 = new Discord.ButtonBuilder()
-          .setStyle("DANGER")
+          .setStyle("Danger")
           .setLabel(options.buttonText)
           .setDisabled()
           .setCustomId(id);
@@ -296,7 +296,7 @@ module.exports = async (options) => {
 
       if (button.customId === id) {
         btn1 = new Discord.ButtonBuilder()
-          .setStyle("DANGER")
+          .setStyle("Danger")
           .setLabel(options.buttonText)
           .setDisabled()
           .setCustomId(id);
@@ -339,7 +339,7 @@ module.exports = async (options) => {
           _embed.setTimestamp();
         }
         btn1 = new Discord.ButtonBuilder()
-          .setStyle("DANGER")
+          .setStyle("Danger")
           .setLabel(options.buttonText)
           .setDisabled()
           .setCustomId(id);
@@ -370,7 +370,7 @@ module.exports = async (options) => {
       embed.setTimestamp();
     }
     let btn1 = new Discord.ButtonBuilder()
-      .setStyle("DANGER")
+      .setStyle("Danger")
       .setLabel(options.buttonText)
       .setCustomId(id);
     const msg = await options.message.reply({
@@ -411,7 +411,7 @@ module.exports = async (options) => {
           _embed.setTimestamp();
         }
         btn1 = new Discord.ButtonBuilder()
-          .setStyle("DANGER")
+          .setStyle("Danger")
           .setLabel(options.buttonText)
           .setDisabled()
           .setCustomId(id);
@@ -461,7 +461,7 @@ module.exports = async (options) => {
 
       if (button.customId === id) {
         btn1 = new Discord.ButtonBuilder()
-          .setStyle("DANGER")
+          .setStyle("Danger")
           .setLabel(options.buttonText)
           .setDisabled()
           .setCustomId(id);
@@ -504,7 +504,7 @@ module.exports = async (options) => {
           _embed.setTimestamp();
         }
         btn1 = new Discord.ButtonBuilder()
-          .setStyle("DANGER")
+          .setStyle("Danger")
           .setLabel(options.buttonText)
           .setDisabled()
           .setCustomId(id);
