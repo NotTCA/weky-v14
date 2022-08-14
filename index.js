@@ -4,9 +4,7 @@ const flip = require("./data/flip.js");
 const tiny = require("./data/tiny.js");
 const bent = require("./data/bent.js");
 const copy = require("./data/copy.js");
-const DJSVersion =
-  require("../../package.json").dependencies["discord.js"] ||
-  require("../../package.json").devDependencies["discord.js"];
+const Discord = require("discord.js");
 
 module.exports = {
   bent: function (str) {
@@ -102,7 +100,7 @@ module.exports = {
   },
 };
 
-if (DJSVersion === "^12.5.3") {
+if (Discord.version === "12.5.3") {
   module.exports = {
     Sudo: require("./src/v12/Sudo"),
     Snake: require("./src/v12/Snake"),
@@ -121,7 +119,7 @@ if (DJSVersion === "^12.5.3") {
     RockPaperScissors: require("./src/v12/RockPaperScissors"),
     WillYouPressTheButton: require("./src/v12/WillYouPressTheButton"),
   };
-} else if (DJSVersion === "^13.10.2") {
+} else if (Discord.version === "^13.10.2") {
   module.exports = {
     Sudo: require("./src/v13/Sudo"),
     Snake: require("./src/v13/Snake"),
