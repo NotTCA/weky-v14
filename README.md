@@ -2,17 +2,17 @@
    style="margin-bottom:-6px" src="https://cdn.discordapp.com/avatars/809496186905165834/7dbf02cb782c7111b817f329cac0257a.png" /></p>
 <h1 align="center">Weky</h1>
 <p align="center">
-   <a href="https://www.npmjs.com/package/weky"><img src="https://img.shields.io/npm/v/weky.svg?style=flat-square" /></a>
+   <a href="https://www.npmjs.com/package/@nottca/weky"><img src="https://img.shields.io/npm/v/@nottca/weky.svg?style=flat-square" /></a>
    <a href="https://weky-docs.js.org/"><img src="https://img.shields.io/badge/Documentation-Yes-amiajokegreen.svg?style=flat-square" /></a>
-   <a href="https://github.com/WekyDev/weky-npm/blob/main/LICENSE"><img src="https://nuggies.js.org/assets/img/license.ade17f5e.svg" /></a>
+   <a href="https://github.com/@nottca/weky/blob/main/LICENSE"><img src="https://nuggies.js.org/assets/img/license.ade17f5e.svg" /></a>
    <br>
-   <a href="https://www.npmjs.com/package/weky"><img src="https://nodei.co/npm/weky.png?downloadRank=true&downloads=true&downloadRank=true&stars=true" /></a>
+   <a href="https://www.npmjs.com/package/@nottca/weky"><img src="https://nodei.co/npm/@nottca/weky.png?downloadRank=true&downloads=true&downloadRank=true&stars=true" /></a>
 </p>
 
 ## What is weky?
 
 - A fun npm package to play games within Discord with buttons!
-- looking for examples? click here: [Examples](https://github.com/NotTCA/weky-v14/tree/main/Examples)
+- Looking for examples? [Click here!](https://github.com/NotTCA/weky-v14/tree/main/Examples)
 
 ## Features
 
